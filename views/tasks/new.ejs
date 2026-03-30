@@ -1,0 +1,51 @@
+<% layout("/layouts/boilerplate")%>
+<div class="form-body">
+    <form method="post" action="/list" class="row g-3 needs-validation" novalidate>
+        <h1 style="color: rgb(245, 65, 65);">Add Your tasks</h1>
+        <div >
+        <label for="task" class="form-label">Task name:</label>
+        <input type="text" name="task" id="task" class="form-control" placeholder="enter your task name"  required>
+        <div class="invalid-feedback">Please mention your task!</div>
+        </div>
+
+        <div >
+        <label for="description" class="form-label">Description:</label><br>
+        <textarea placeholder="enter the description" class="form-control" id="description" name="description"  required></textarea>
+        <div class="invalid-feedback">Please write the description short!</div>
+        </div>
+        
+
+        <div class="col-11">
+         <label for="ftime" class="form-label">From Time:</label>
+        <input type="text" id="ftime" class="form-control" name="ftime" placeholder="enter the from time" pattern="^(0?[1-9]|1[0-2]):[0-5][0-9]$"  required>
+        <div class="invalid-feedback">Please mention the time correctly!</div>
+        </div>
+        <div class="col-1">
+        <select name="fmeridiem" class="am" required>
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+        </select>
+        </div>
+
+
+        <div class="col-11">
+        <label for="Totime" class="form-label">To Time:</label>
+        <input type="text" id="Totime" class="form-control" name="Totime" placeholder="enter the To time" pattern="^(0?[1-9]|1[0-2]):[0-5][0-9]$"  required>
+        <div class="invalid-feedback">Please mention the time correctly!</div>
+        </div>
+        <div class="col-1">
+            <select name="Tomeridiem" class="am" required>
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+           </select>
+        </div>
+
+        <div>
+            <label for="range3"  class="form-label">Priority</label>
+           <input type="range" name="priority" class="form-range" min="0" max="5" step="1" id="range3">
+        </div>
+
+
+        <button type="submit" class="btn btn-outline-success">Add Task</button>
+    </form>
+</div>

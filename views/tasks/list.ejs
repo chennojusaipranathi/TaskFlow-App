@@ -1,0 +1,30 @@
+<% layout("/layouts/boilerplate")%>
+<div class="container">
+    <div class="welcome">
+      <h1>Welcome back <%=user.username%></h1>
+      <p>Plan smarter. Execute better.</p>
+    </div>
+    <hr>
+    <div class="timings">
+      <a href="/list" class="btn tm btn-outline-secondary">📋 All</a>
+      <a href="/list/mrng" class="btn tm btn-outline-warning">🌅 Morning</a>
+      <a href="/list/afternoon" class="btn tm btn-outline-primary">☀️ Afternoon</a>
+       <a href="/list/night" class="btn tm btn-outline-dark">🌙 Night</a>
+      <a href="/list/priority" class="btn tm btn-outline-danger">⭐ Priority</a>
+    </div>
+    <br>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+       <% for(let tasks of allTasks){%>
+  <div class="col">
+    <a href="/show/<%=tasks._id%>" class="task-link">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title"><%=tasks.task%></h5>
+        <p class="card-text">From:<%=tasks.ftime%><%=tasks.fmeridiem%><br>
+        To:<%=tasks.Totime%><%=tasks.Tomeridiem%></p>
+      </div>
+    </div></a>
+  </div>
+  <%}%>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.crd-bd{
+    margin-left: 25%;
+}
+.form-body{
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.editbody{
+    margin-left: 3%;
+}
+.task-link{
+    text-decoration: none;
+}
+
+.container{
+    flex: 1;
+     margin-top: 1%;
+     margin-bottom: 1%;
+}
+.navbar-space{
+    width: 100%;
+}
+
+/*Footer*/
+.f-info-socials{
+    width: 100%;
+    display: flex;
+    align-items: center;
+     justify-content: center;
+}
+
+.f-info-socials i{
+    margin-right: 0.8rem;
+     font-size: 1.2rem;
+}
+.f-info-socials i:hover{
+    font-size: 1.5rem;
+    color: gray;
+}
+.f-info-socials a{
+    text-decoration: none;
+    color: #000;
+}
+.f-info{
+    text-align: center;
+    height: 3rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.am{
+    height: 2rem;
+    margin-top: 45%;
+}
+
+/*buttons in main page*/
+.timings{
+    display:flex;
+    justify-content: flex-start;
+}
+.tm{
+    margin-right: 1rem;
+}

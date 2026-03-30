@@ -1,0 +1,46 @@
+<% layout("/layouts/boilerplate")%>
+<div class="editbody">
+    <form method="post" action="/show/<%=Task._id%>?_method=PATCH" class="row g-3 needs-validation" novalidate>
+         <h1>Edit Your tasks</h1>
+         <div>
+        <label for="task" class="form-label">Task name:</label>
+        <input type="text" name="task" id="task" class="form-control"  value="<%=Task.task%>" required>
+         <div class="valid-feedback">Title looks Good!</div>
+         </div>
+      <br>
+        
+        <div>
+        <label for="description" class="form-label">Description:</label><br>
+        <textarea id="description" class="form-control" name="description" required><%=Task.description%></textarea>
+        <div class="valid-feedback">Looks great!</div>
+         </div>
+
+         <div class="col-11">
+         <label for="ftime" class="form-label">From Time:</label>
+        <input type="text" id="ftime" class="form-control" name="ftime" value="<%=Task.ftime%>"  pattern="^(0?[1-9]|1[0-2]):[0-5][0-9]$"  required>
+        <div class="invalid-feedback">Please mention the time correctly!</div>
+        </div>
+        <div class="col-1">
+        <select name="fmeridiem" class="am" required>
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+        </select>
+        </div>
+
+
+        <div class="col-11">
+        <label for="Totime" class="form-label">To Time:</label>
+        <input type="text" id="Totime" class="form-control" name="Totime" value="<%=Task.Totime%>" pattern="^(0?[1-9]|1[0-2]):[0-5][0-9]$" required>
+        <div class="invalid-feedback">Please mention the time correctly!</div>
+        </div>
+        <div class="col-1">
+            <select name="Tomeridiem" class="am" required>
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+           </select>
+        </div>
+
+
+        <button class="btn btn-outline-primary">Edit Task</button>
+    </form>
+</div>

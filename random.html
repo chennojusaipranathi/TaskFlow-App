@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guess Game</title>
+</head>
+<body>
+
+    <label>Enter the number (1-999)</label><br>
+    <input type="number" id="num">
+    <br><br>
+
+    <button id="btn">Get result</button>
+
+    <h5 id="res"></h5>
+    <h5>Hint: You have only 10 chances!</h5>
+
+<script>
+    let n = Math.floor(Math.random() * 999) + 1;
+    console.log("Random number:", n); 
+
+    let chances = 10;
+    const btn = document.getElementById("btn");
+    const result = document.getElementById("res");
+
+    btn.addEventListener("click", () => {
+        let guess = Number(document.getElementById("num").value);
+
+        if (chances === 0) {
+            result.innerHTML = "❌ Game Over! No chances left";
+            btn.disabled = true;
+            return;
+        }
+
+        chances--;
+
+        if (guess === n) {
+            result.innerHTML = "🎉 Congratulations! You won!";
+            btn.disabled = true;
+        } else if (guess > n) {
+            result.innerHTML = `Too high! Chances left: ${chances}`;
+        } else {
+            result.innerHTML = `Too low! Chances left: ${chances}`;
+        }
+    });
+</script>
+
+</body>
+</html>

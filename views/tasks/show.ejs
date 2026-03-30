@@ -1,0 +1,27 @@
+<% layout("/layouts/boilerplate")%>
+    <h3 style="text-align: center; margin-top: 2rem;">View your Task</h3>
+    <br>
+    <div class="card text-center col-sm-6 mb-3 mb-sm-0 crd-bd">
+  <div class="card-header">
+    <%=Task.task%>
+  </div>
+  <div class="card-body">
+    <p class="card-text"><%=Task.description%><br>
+
+    From:<%=Task.ftime%><%=Task.fmeridiem%><br>
+    To:<%=Task.Totime%><%=Task.Tomeridiem%></p>
+     <div>
+            <label for="range3"  class="form-label">Priority</label>
+           <input type="range" name="priority" class="form-range" min="0" max="5" step="1" value="<%=Task.priority%>" id="range3"  disabled>
+      </div>
+    <form method="get" action="/edit/<%=Task._id%>">
+        <button class="btn btn-outline-success">Edit Task</button>
+    </form>
+  </div>
+  <div class="card-footer text-body-secondary">
+     <form method="post" action="/list/<%=Task._id%>?_method=delete">
+     <button class="btn btn-outline-danger">Delete Task</button>
+   </form>
+  </div>
+</div>
+    
