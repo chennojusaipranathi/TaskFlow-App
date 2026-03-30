@@ -18,4 +18,4 @@ TaskFlow is a full-stack task management web app built using Node.js, Express, M
 * Passport.js, express-session
 
 
-Open: http://localhost:8080
+Open: http://localhost:8080/login
